@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | 郭世都的个人博客</title>
+  <title>vue--事件总线初接触 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="郭世都的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+  <meta name="description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue--事件总线初接触">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/vue-事件总线初接触/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
+<meta property="og:description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-22T00:50:47.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭世都的个人博客">
+<meta name="twitter:title" content="vue--事件总线初接触">
+<meta name="twitter:description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -150,36 +155,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-事件总线初接触" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/22/vue-事件总线初接触/" class="archive-article-date">
-  	<time datetime="2019-07-22T00:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/vue-事件总线初接触/">vue--事件总线初接触</a>
+    <h1 class="article-title" itemprop="name">
+      vue--事件总线初接触
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/22/vue-事件总线初接触/" class="archive-article-date">
+  	<time datetime="2019-07-22T00:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue–事件总线初接触"><a href="#vue–事件总线初接触" class="headerlink" title="vue–事件总线初接触"></a>vue–事件总线初接触</h2><p>Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)<br>1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js</p>
+<p>2.在Bus.js文件中写入<br>import Vue from ‘vue’<br>export const EventBus = new Vue()<br>……<a id="more"></a><br>3.在使用到的组件中都要引入(因为是非全局的)<br>import { EventBus } from “../utils/Bus”</p>
+<p>4.发布订阅<br>在事件中调用发布订阅方法,其中bus是对应的名字,接收时要对应起来,这里发布的数据是一个对象,接收的话也会是一个对象,所以注意接收值的结构,<br>EventBus.$emit(“bus”, {<br>nr: this.busVal<br>});</p>
+<p>5.接收组件<br>在接收的组件中也引入<br>import { EventBus } from “../utils/Bus”<br>然后在mounted或其他钩子函数(根据实际情况而定),写接收函数<br>EventBus.$on(‘bus’, busVal =&gt; {<br>this.val = busVal.nr<br>EventBus.$off(‘bus’)<br>})</p>
+<p>注意这里的”bus”是名字,虽然是自定义的但与发布订阅要对应,<br>busVal是形参可自定义,最后确认使用完毕后要清除对应的事件总线。</p>
+<p>Vue-cli 事件总线demo总结</p>
+<p>本次遇到的问题:<br>    路由跳转后,可以在控制台打印值,但无法渲染进视图<br>原因 :与路由跳转的加载与销毁顺序有关<br>解决办法:<br>将发布订阅写在destroyed()钩子函数中,这样会在组件销毁时发布订阅</p>
+<p>在接受订阅的组件中</p>
+<p>注意写在created()钩子函数中的话一定要写this.$nextTick()函数中,也是顺序原因</p>
+<p>这是有路由跳转的情况下需要的,如果不需要路由跳转就不用了,可以直接发布并得到值,每当值改变都会触发$on</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你为我点赞<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,57 +225,117 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/22/vue-事件总线初接触/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/20/Hexo个人安装总结/" class="archive-article-date">
-  	<time datetime="2019-07-20T10:21:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/20/Hexo个人安装总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo个人安装总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/20/Hexo个人安装总结/">Hexo个人安装总结</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/07/22/vue-事件总线初接触/", 
+    sourceId: "vue-事件总线初接触",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -264,8 +358,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
