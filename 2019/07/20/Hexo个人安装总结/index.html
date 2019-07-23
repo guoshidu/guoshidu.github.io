@@ -373,7 +373,7 @@
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
    var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
+   var verify = 'true' == true ? true : false;
     window.onload = function() {
         new Valine({
             el: '.comment',
@@ -381,8 +381,8 @@
             verify: verify,
             app_id: "vaTKGl67sWK5flIUtXlsLV0e-gzGzoHsz",
             app_key: "ExFvpgYgY94JIofPnjAXzJMQ",
-            placeholder: "Just go go",
-            avatar:"mm"
+            placeholder: "快来评论吧!",
+            avatar:"wavatar"
         });
     }
 </script>

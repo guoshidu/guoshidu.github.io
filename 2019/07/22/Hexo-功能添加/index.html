@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue--事件总线初接触 | 郭世都的个人博客</title>
+  <title>Hexo 功能添加 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="网易云音乐插件  在如今虽然这个时代,虽然已是站在巨人的肩膀上,但愚笨的人,还是不能得心应手(比如我)。今天花了5个半小时才给这个博客加了音乐插件以及评论功能。  接下来总结一下今天的事情。  先说说音乐插件    用的是网易云音乐的外链,放在了左边栏。    步骤:">
+<meta name="keywords" content="安装总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue--事件总线初接触">
-<meta property="og:url" content="http://yoursite.com/2019/07/22/vue-事件总线初接触/index.html">
+<meta property="og:title" content="Hexo 功能添加">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/Hexo-功能添加/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
-<meta property="og:description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
+<meta property="og:description" content="网易云音乐插件  在如今虽然这个时代,虽然已是站在巨人的肩膀上,但愚笨的人,还是不能得心应手(比如我)。今天花了5个半小时才给这个博客加了音乐插件以及评论功能。  接下来总结一下今天的事情。  先说说音乐插件    用的是网易云音乐的外链,放在了左边栏。    步骤:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T00:50:47.320Z">
+<meta property="og:updated_time" content="2019-07-23T01:46:54.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue--事件总线初接触">
-<meta name="twitter:description" content="vue–事件总线初接触Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js 2.在Bus.js文件中写入import Vue from ‘vue’export const EventBus = new Vue()……">
+<meta name="twitter:title" content="Hexo 功能添加">
+<meta name="twitter:description" content="网易云音乐插件  在如今虽然这个时代,虽然已是站在巨人的肩膀上,但愚笨的人,还是不能得心应手(比如我)。今天花了5个半小时才给这个博客加了音乐插件以及评论功能。  接下来总结一下今天的事情。  先说说音乐插件    用的是网易云音乐的外链,放在了左边栏。    步骤:">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -167,36 +167,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-事件总线初接触" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo-功能添加" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue--事件总线初接触
+      Hexo 功能添加
     </h1>
   
 
         
-        <a href="/2019/07/22/vue-事件总线初接触/" class="archive-article-date">
-  	<time datetime="2019-07-22T00:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
+        <a href="/2019/07/22/Hexo-功能添加/" class="archive-article-date">
+  	<time datetime="2019-07-22T08:00:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue–事件总线初接触"><a href="#vue–事件总线初接触" class="headerlink" title="vue–事件总线初接触"></a>vue–事件总线初接触</h2><p>Vue-cli事件总线步骤(非全局—有路由跳转不生效的情况,请看最后的总结)<br>1.创建一个js文件(最好创建一个utils文件夹,把这个js放在其中),这里命名为Bus.js</p>
-<p>2.在Bus.js文件中写入<br>import Vue from ‘vue’<br>export const EventBus = new Vue()<br>……<a id="more"></a><br>3.在使用到的组件中都要引入(因为是非全局的)<br>import { EventBus } from “../utils/Bus”</p>
-<p>4.发布订阅<br>在事件中调用发布订阅方法,其中bus是对应的名字,接收时要对应起来,这里发布的数据是一个对象,接收的话也会是一个对象,所以注意接收值的结构,<br>EventBus.$emit(“bus”, {<br>nr: this.busVal<br>});</p>
-<p>5.接收组件<br>在接收的组件中也引入<br>import { EventBus } from “../utils/Bus”<br>然后在mounted或其他钩子函数(根据实际情况而定),写接收函数<br>EventBus.$on(‘bus’, busVal =&gt; {<br>this.val = busVal.nr<br>EventBus.$off(‘bus’)<br>})</p>
-<p>注意这里的”bus”是名字,虽然是自定义的但与发布订阅要对应,<br>busVal是形参可自定义,最后确认使用完毕后要清除对应的事件总线。</p>
-<p>Vue-cli 事件总线demo总结</p>
-<p>本次遇到的问题:<br>    路由跳转后,可以在控制台打印值,但无法渲染进视图<br>原因 :与路由跳转的加载与销毁顺序有关<br>解决办法:<br>将发布订阅写在destroyed()钩子函数中,这样会在组件销毁时发布订阅</p>
-<p>在接受订阅的组件中</p>
-<p>注意写在created()钩子函数中的话一定要写this.$nextTick()函数中,也是顺序原因</p>
-<p>这是有路由跳转的情况下需要的,如果不需要路由跳转就不用了,可以直接发布并得到值,每当值改变都会触发$on</p>
+        <h4 id="网易云音乐插件"><a href="#网易云音乐插件" class="headerlink" title="网易云音乐插件"></a>网易云音乐插件</h4><p>  在如今虽然这个时代,虽然已是站在巨人的肩膀上,但愚笨的人,还是不能得心应手(比如我)。今天花了5个半小时才给这个博客加了音乐插件以及评论功能。<br>  接下来总结一下今天的事情。<br>  先说说音乐插件<br>    用的是网易云音乐的外链,放在了左边栏。<br>    步骤:<br>    <a id="more"></a><br>    1.先去网易选好音乐得到外链<br>    2.在themes/yilia/layout/_partial/left-col.ejs文件nav标签中添加代码,将外链放在nav标签中,具体位置仿照原有nav标签<br>    3.3、在yilia主题配置文件中添加属性<br>    在yilia主题配置文件_config.yml中添加属性<br>    music:<br>      enable: true<br>      #id: <strong><strong>**</strong></strong>  # 网易云分享的ID<br>      autoplay: true  # 是否开启自动播放</p>
+<h4 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h4><p>  刚开始的时候百度了很多家评论系统,各有各的优点(虽然很多家都关闭服务了),可供使用的已经很少了。</p>
+<p><strong>1.来必力</strong><br>我装的第一个评论功能插件是”来必力”,是一家韩国的评论插件服务,支持很多国内外的各大厂家的帐号登录功能,如QQ,微博,微信,github等等,就登录功能跟评论管理来说,还是很满意的。但不知道是我的网络问题,还是因为是家韩国服务的原因,加载非常难受,经常加载不出来,或者说不加载。功能再好,用不了也是不行的。<br>步骤还是说一下:</p>
+<p>第一步:去<a href="https://www.livere.com/" target="_blank" rel="noopener">来必力</a>官网注册一下–可以用国内QQ邮箱注册。</p>
+<p>第二步:注册完成后选择首页的安装,会得到一篇代码<br>  类似:<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;MTEQE3121WEQ54yMTkQEw==&quot;&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        (function (d, s) &#123;</span><br><span class="line">            var j, e = d.getElementsByTagName(s)[0];</span><br><span class="line"></span><br><span class="line">            if (typeof LivereTower === &apos;function&apos;) &#123; return; &#125;</span><br><span class="line"></span><br><span class="line">            j = d.createElement(s);</span><br><span class="line">            j.src = &apos;https://cdn-city.livere.com/js/embed.dist.js&apos;;</span><br><span class="line">            j.async = true;</span><br><span class="line"></span><br><span class="line">            e.parentNode.insertBefore(j, e);</span><br><span class="line">        &#125;)(document, &apos;script&apos;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;noscript&gt; 为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第三步:在yilia主题下的layout_partial\post文件夹下创建一个livere.ejs的文件,把上面得到的文件写入新创建的文件里面即可。</p>
+<p>第四步:引入插件,在yilia下的layout_partial\article.ejs文件中找到<br><code>&lt;% if (!index &amp;&amp; post.comments){ %&gt;</code><br>这一行,在这行代码的下面写入下方代码<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  &lt;% if (theme.livere)&#123; %&gt;</span><br><span class="line">&lt;%- partial(&apos;post/livere&apos;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">  &#125;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第五步:将插件配置进去,在yilia配置文件_config.yml中随便一行写入(最好跟其他评论插件配置放在一起),</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere: MTEQE3121WEQ54yMTkQEw==,这里是从官网得到的一篇代码中div的data-uid的属性值</span><br></pre></td></tr></table></figure>
+
+<p>第六步:目标Git Bash Here中输入hexo clean清理,hexo g生成,hexo s启动,hexo d上传就好了</p>
+<hr>
+<p><strong>2.配合Github</strong><br>  第二个装的是配合github的评论功能,但毕竟是外国的,感觉还是不是很友好,而且登录功能很单一,只有github帐号可以登录。<br>    这个在yilia主题中已经配置好了,只需要在配置文件中填写对应的ID跟值即可。</p>
+<hr>
+<p><strong>3.valine</strong><br>  第三个是valine,这是一家国内开发者开发的一款评论系统。需要配合LeanCloud使用,LeanCloud需要手持身份证照片实名认证,认证通过则可以创建应用。<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine官方文档</a></p>
+<p>  第一步:注册LeanCloud并实名认证,通过后可点击应用并创建应用。</p>
+<p>  第二步:在创建的应用中进入设置栏,再进入设置栏的应用Key页面。可以得到App ID和App Kye。</p>
+<p>  第三步:在yilia主题的layout_partial\post文件夹下创建valine.ejs文件,在其中写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; </span><br><span class="line">&lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;</span><br><span class="line">   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;</span><br><span class="line">    window.onload = function() &#123;</span><br><span class="line">        new Valine(&#123;</span><br><span class="line">            el: &apos;.comment&apos;,</span><br><span class="line">            notify: notify,</span><br><span class="line">            verify: verify,</span><br><span class="line">            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,</span><br><span class="line">            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,</span><br><span class="line">            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,</span><br><span class="line">            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>并保存</p>
+<p>  第四步:引入插件,在yilia下的layout_partial\article.ejs文件中找到<br>  <code>&lt;% if (!index &amp;&amp; post.comments){ %&gt;</code>这行代码,在这行代码下面插入下方代码<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> &lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey)&#123; %&gt;</span><br><span class="line">&lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">	.comments&#123;margin:30px;padding:10px;background:#fff&#125;</span><br><span class="line">	@media screen and (max-width:800px)&#123;.comments&#123;margin:auto;padding:10px;background:#fff&#125;&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line"> &lt;%- partial(&apos;post/valine&apos;, &#123;</span><br><span class="line">	key: post.slug,</span><br><span class="line">	title: post.title,</span><br><span class="line">	url: config.url+url_for(post.path)</span><br><span class="line">	&#125;) %&gt;</span><br><span class="line"> &lt;/section&gt;</span><br><span class="line"> &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  第五步:将插件配置进去,在yilia配置文件_config.yml中随便一行写入(最好跟其他评论插件配置放在一起),<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  #7、Valine https://valine.js.org</span><br><span class="line">valine: </span><br><span class="line"> appid: ******************** 这里写在LeanCloud中获得的App ID</span><br><span class="line"> appkey: ********************* 这里写在LeanCloud中获得的App IKey</span><br><span class="line"> verify: true #验证码</span><br><span class="line"> notify: false #评论回复提醒</span><br><span class="line"> avatar: wavatar #评论列表头像样式：&apos;&apos;/mm/identicon/monsterid/wavatar/retro/hide</span><br><span class="line"> placeholder: 快来评论吧! #评论框占位符</span><br></pre></td></tr></table></figure></p>
+<p>  第六步:目标Git Bash Here中输入hexo clean清理,hexo g生成,hexo s启动,hexo d上传就好了</p>
 
       
 
@@ -241,7 +255,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
         		</li>
       		
 		</ul>
@@ -297,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/22/vue-事件总线初接触/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/22/Hexo-功能添加/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +325,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/22/Hexo-功能添加/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo 功能添加
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/20/Hexo个人安装总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo个人安装总结</div>
+    <a href="/2019/07/22/vue-事件总线初接触/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue--事件总线初接触</div>
       <i class="icon-circle-right"></i>
     </a>
   
