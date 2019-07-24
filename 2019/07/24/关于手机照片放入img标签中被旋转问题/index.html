@@ -16,12 +16,10 @@
 <meta property="og:site_name" content="郭世都的个人博客">
 <meta property="og:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/07/24/2019-7-24/imgEXIF.png">
-<meta property="og:updated_time" content="2019-07-24T03:25:20.566Z">
+<meta property="og:updated_time" content="2019-07-24T05:43:57.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于手机照片放入img 标签中被旋转问题">
 <meta name="twitter:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/24/2019-7-24/imgEXIF.png">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -253,7 +251,7 @@
     </table>
 </html>
 
-<p>再参照下图:<br><img src="../2019-7-24/imgEXIF.png" alt="Image text">,对比一下就可以得出结论了</p>
+<p>再参照下图:<br><a href="../../../../2019-7-24/imgExif.gif">Image text</a>,对比一下就可以得出结论了</p>
 <p><strong>用js取值方法</strong>:<br>首先安装Exif.js:<br><code>npm install exif-js --save</code>安装依赖<br>再在要使用的组件中引入:<br><code>import EXIF from &#39;exif-js&#39;</code><br>然后在使用下面的代码就可以得到图片的Orientation值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXIF.getData(document.getElementById(&apos;imgElement&apos;), function()&#123;//这行传入的第一个参数是图片的节点,第二个是回调函数</span><br><span class="line">EXIF.getTag(this, &apos;Orientation&apos;);//这行代码就是获取的图片的Orientation值</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -533,11 +531,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">日常工作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日常工作</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
