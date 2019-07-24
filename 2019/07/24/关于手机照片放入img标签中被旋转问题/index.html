@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo个人安装总结 | 郭世都的个人博客</title>
+  <title>关于手机照片放入img 标签中被旋转问题 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo安装步骤 因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.  安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的……">
-<meta name="keywords" content="安装总结">
+  <meta name="description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
+<meta name="keywords" content="日常工作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo个人安装总结">
-<meta property="og:url" content="http://yoursite.com/2019/07/20/Hexo个人安装总结/index.html">
+<meta property="og:title" content="关于手机照片放入img 标签中被旋转问题">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/关于手机照片放入img标签中被旋转问题/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
-<meta property="og:description" content="Hexo安装步骤 因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.  安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的……">
+<meta property="og:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T00:49:54.214Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/24/2019-7-24/imgEXIF.png">
+<meta property="og:updated_time" content="2019-07-24T03:25:20.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo个人安装总结">
-<meta name="twitter:description" content="Hexo安装步骤 因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.  安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的……">
+<meta name="twitter:title" content="关于手机照片放入img 标签中被旋转问题">
+<meta name="twitter:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/24/2019-7-24/imgEXIF.png">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -169,54 +171,94 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo个人安装总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-关于手机照片放入img标签中被旋转问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo个人安装总结
+      关于手机照片放入img 标签中被旋转问题
     </h1>
   
 
         
-        <a href="/2019/07/20/Hexo个人安装总结/" class="archive-article-date">
-  	<time datetime="2019-07-20T10:21:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+        <a href="/2019/07/24/关于手机照片放入img标签中被旋转问题/" class="archive-article-date">
+  	<time datetime="2019-07-24T00:26:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Hexo安装步骤"><a href="#Hexo安装步骤" class="headerlink" title="Hexo安装步骤"></a>Hexo安装步骤</h2><ol>
-<li><p>因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.</p>
-</li>
-<li><p>安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的<br>……<a id="more"></a>办法可百度)</p>
-</li>
-<li><p>安装hexo,最好用cnpm装,因为是国内的,会比npm下载快.在cmd中输入<br>cnpm install –g hexo –cli 会自动安装</p>
-</li>
-<li><p>安装完成后接着创建一个项目文件夹,在项目文件夹下的cmd中输入 (sudo 这里这个sudo我没有输入,直接安装) hexo init初始化博客(注意:如果说不是内部或外部命令,说明系统全局环境变量没有配置,具体配置方法可以百度hexo环境变量配置,注意注意注意,添加环境变量的时候不要把Path正行都删了,里面还有很多其他软件的变量,在已有的路径后面打上;然后把hexo的环境变量添加到后面)<br>这里安装的时候花了好久时间,因为默认npm的源在国外,下载会非常慢,而且我这下的时候直接下不下来。解决办法就是在全局cmd中输入<br>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>这样可以把npm的源改为淘宝的(国内),这样下载快,切会成功。</p>
-</li>
-<li><p>成功后就是在目标文件夹下的cmd输入 hexo s 启动,得到<br><a href="http://localhost:4000(默认),打开可以看到" target="_blank" rel="noopener">http://localhost:4000(默认),打开可以看到</a></p>
-</li>
-<li><p>创建博文,此时Ctrl+C,暂时关掉项目,在目标文件夹下的cmd中输入hexo n “我的第一篇文章”(这里就是标题了—自定义)</p>
-</li>
-<li><p>在目标文件夹下的cmd输入hexo clean清理一下,然后在hexo g生成一下.再启动就可以看到博文了</p>
-</li>
-<li><p>将自己的博客挂到github上需要在自己的github帐号中创建一个库,创建时的地址栏输入<br>自己的帐号.github.io,(自己的帐号这部分很关键),我的是guoshidu.github.io,下面点生成就好了.</p>
-</li>
-<li><p>在目标文件夹下输入cnpm install –save hexo-deployer-git下载推送工具</p>
-</li>
-<li><p>配置在目标文件夹下跟目录的_config.yml文件,在最后一行的deploy中配置是如下:<br>deploy:<br>type: git<br>repo: <a href="https://github.com/guoshidu/guoshidu.github.io.git" target="_blank" rel="noopener">https://github.com/guoshidu/guoshidu.github.io.git</a><br>branch: master</p>
-</li>
-</ol>
-<p>repo:后跟的是自己的github库的地址,(注意注意:在type等 : (冒号)的后面一定要加一个空格)<br>11.<br>在目标文件下打开Git Bash Here 在其中输入<br>git config –global user.email “你的邮箱”<br>git config –global user.name “你的名字”<br>（注意 “ 前面是有空格的）<br>之后在运行 hexo d会弹出一个输入框,在其中输入github的账户名和密码即可。<br>12.<br>推送完成后可在网址输入库的网址即可打开,我这里是<a href="https://guoshidu.github.io/" target="_blank" rel="noopener">https://guoshidu.github.io/</a></p>
-<p>换主题:<br>如换为地址为 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a></p>
-<p>在目标文件夹下的Git Bash Here输入git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia<br>下载好后在themes文件夹下就有yilia文件夹了<br>然后修改根目录下的_config.yml文件</p>
-<p>然后接着在目标文件夹下的Git Bash Here输入hexo clean清理一下,在hexo g生成一下</p>
-<p>最后 hexo d推送出去就好了</p>
-<p>不让文章一下子在首页全部显示可以用&lt;!– more –&gt;这个来切割,这样只会在首页显示这个标签之前的内容,只有点开查看全部才会显示全部</p>
+        <h4 id="工作中遇到的问题"><a href="#工作中遇到的问题" class="headerlink" title="工作中遇到的问题"></a>工作中遇到的问题</h4><p>  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。</p>
+<h4 id="图片的EXIF信息"><a href="#图片的EXIF信息" class="headerlink" title="图片的EXIF信息"></a>图片的EXIF信息</h4><p>  <strong>关于图片的EXIF信息百度百科是这么介绍的:</strong><br> <a id="more"></a>EXIF信息，是可交换图像文件的缩写，是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。EXIF可以附加于JPEG、TIFF、RIFF等文件之中，为其增加有关数码相机拍摄信息的内容和索引图或图像处理软件的版本信息。<br>  也就是说他包含了图片拍摄时的各类数据,如Exposure Bias Value 曝光补偿、Max Aperture Value 最大光圈、ISO speed ratings感光度、Exif Version Exif版本、DateTime Original 创建时间、orientation 图片旋转<br>  手机照片放入img中被旋转,或者说”不正”的根源就是orientation 图片旋转,浏览器没有将它解析,并且应用它。导致图片不能正确的方向显示。<br>  前端的解决办法是,先读取,得到值进行判断,并旋转。<br>  <strong>具体数据如下:</strong></p>
+<p>参数    0行（未旋转上）    0列（未旋转左）    旋转（方法很多）<br>1    上    左    0°<br>2    上    右    水平翻转<br>3    下    右    180°<br>4    下    左    垂直翻转<br>5    左    上    顺时针90°+水平翻转<br>6    右    上    顺时针90°<br>7    右    下    顺时针90°+垂直翻转<br>8    左    下    逆时针90°</p>
+<html>
+    <table>
+        <tr>
+            <td>得出的值</td>
+            <td>0行（未旋转上）</td>
+            <td>0列（未旋转左）</td>
+            <td>旋转</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>上</td>
+            <td>左</td>
+            <td>0°</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>上</td>
+            <td>右</td>
+            <td>水平翻转</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>下</td>
+            <td>右</td>
+            <td>180°</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>下</td>
+            <td>左</td>
+            <td>垂直翻转</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>左</td>
+            <td>上</td>
+            <td>顺时针90°+水平翻转</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>右</td>
+            <td>上</td>
+            <td>顺时针90°</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>右</td>
+            <td>下</td>
+            <td>顺时针90°+垂直翻转</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>左</td>
+            <td>下</td>
+            <td>逆时针90°</td>
+        </tr>
+    </table>
+</html>
+
+<p>再参照下图:<br><img src="../2019-7-24/imgEXIF.png" alt="Image text">,对比一下就可以得出结论了</p>
+<p><strong>用js取值方法</strong>:<br>首先安装Exif.js:<br><code>npm install exif-js --save</code>安装依赖<br>再在要使用的组件中引入:<br><code>import EXIF from &#39;exif-js&#39;</code><br>然后在使用下面的代码就可以得到图片的Orientation值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXIF.getData(document.getElementById(&apos;imgElement&apos;), function()&#123;//这行传入的第一个参数是图片的节点,第二个是回调函数</span><br><span class="line">EXIF.getTag(this, &apos;Orientation&apos;);//这行代码就是获取的图片的Orientation值</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>要注意的是,实际开发中的图片都是后台获取数据,所以在后台数据获取到之前,DOM节点是没有图片信息的,所以是无法生效的,所以得写在请求函数的回调函数内,并且是写在得到的数据赋值后,这样才能得到实际的img节点。</p>
+<p><strong>css属性解决问题</strong>:<br>css中有一个属性是:<br><code>image-orientation: from-image /* 使用图片的 EXIF 数据 */</code><br>不过这个属性的兼容性目前还是太差了,所以基本很少会用<br>只有高版本的火狐浏览器才支持,其他的高版本浏览器大部分不兼容</p>
 
       
 
@@ -261,7 +303,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常工作</a>
         		</li>
       		
 		</ul>
@@ -317,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/20/Hexo个人安装总结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/24/关于手机照片放入img标签中被旋转问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -331,15 +373,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/22/vue-事件总线初接触/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue--事件总线初接触
-        
-      </div>
-    </a>
   
+    <a href="/2019/07/22/Hexo-功能添加/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo 功能添加</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
