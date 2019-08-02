@@ -5,6 +5,8 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo个人安装总结 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,7 +18,7 @@
 <meta property="og:site_name" content="郭世都的个人博客">
 <meta property="og:description" content="Hexo安装步骤 因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.  安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的……">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T00:49:54.214Z">
+<meta property="og:updated_time" content="2019-07-31T08:49:08.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo个人安装总结">
 <meta name="twitter:description" content="Hexo安装步骤 因为hexo是基于Node.js.所以第一步需要安装Node.js环境,因为是傻瓜式安装,下载安装即可,不多说.  安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的……">
@@ -32,6 +34,17 @@
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
   </style>
   
 
@@ -41,11 +54,12 @@
 </html>
 
 <body>
+  <div style="background: url(/img/241ac0d9776b0b35a16add96800635c8.jpg);width: 100%;height: 100%;position: absolute;top: 0px;left: 0px"></div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" style="background: rgba(255, 255, 255, 0.5)">
       
-<div class="overlay" style="background: #4d4d4d">
+<div class="overlay" style="background: rgba(77,77,77,0.5)">
 </div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -61,8 +75,6 @@
 			<ul>
 			
 		<li><a href="/">主页</a></li>
-		
-		<li><a href="/tags/随笔/">随笔</a></li>
 		
 			</ul>
 		</nav>
@@ -102,12 +114,12 @@
 			</div>
 		</nav>
 		<nav style="margin-top:89px;margin-left:-26px">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe>
+			<iframe frameborder="no" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe>
 		</nav>
 	</header>		
 </div>
     </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse" style="background-color: rgba(255, 255, 255, 0)">
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
@@ -124,8 +136,6 @@
 			</hgroup>
 			
 			
-			
-				
 			
 				
 			
@@ -151,9 +161,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -169,7 +177,7 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo个人安装总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo个人安装总结" class="article article-type-post " itemscope itemprop="blogPost" style="background: rgba(255, 255, 255,0.7)">
   <div class="article-inner">
     
       <header class="article-header">
@@ -194,7 +202,7 @@
 </li>
 <li><p>安装Git环境,官网可下,也是傻瓜式安装一直下一步即可.(可能会遇到Git的cmd命令无法识别,也是环境变量问题,具体解决是添加环境变量,添加的<br>……<a id="more"></a>办法可百度)</p>
 </li>
-<li><p>安装hexo,最好用cnpm装,因为是国内的,会比npm下载快.在cmd中输入<br>cnpm install –g hexo –cli 会自动安装</p>
+<li><p>安装hexo,最好用cnpm装,因为是国内的,会比npm下载快.在cmd中输入<br><code>cnpm install -g hexo -cli</code> 会自动安装</p>
 </li>
 <li><p>安装完成后接着创建一个项目文件夹,在项目文件夹下的cmd中输入 (sudo 这里这个sudo我没有输入,直接安装) hexo init初始化博客(注意:如果说不是内部或外部命令,说明系统全局环境变量没有配置,具体配置方法可以百度hexo环境变量配置,注意注意注意,添加环境变量的时候不要把Path正行都删了,里面还有很多其他软件的变量,在已有的路径后面打上;然后把hexo的环境变量添加到后面)<br>这里安装的时候花了好久时间,因为默认npm的源在国外,下载会非常慢,而且我这下的时候直接下不下来。解决办法就是在全局cmd中输入<br>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>这样可以把npm的源改为淘宝的(国内),这样下载快,切会成功。</p>
 </li>
@@ -357,6 +365,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo安装步骤"><span class="toc-number">1.</span> <span class="toc-text">Hexo安装步骤</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -407,15 +428,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
+    	<div class="footer-left" style="color: skyblue">
     		&copy; 2019 郭世都
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      </div>
+      <!-- <div class="footer-right">       
+          <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    </div> -->
   </div>
 </footer>
+
+
     </div>
     <script>
 	var yiliaConfig = {

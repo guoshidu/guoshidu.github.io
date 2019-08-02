@@ -5,6 +5,8 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>关于手机照片放入img 标签中被旋转问题 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,7 +19,7 @@
 <meta property="og:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019-7-24/imgEXIF.png">
-<meta property="og:updated_time" content="2019-07-25T00:17:24.459Z">
+<meta property="og:updated_time" content="2019-08-02T00:45:56.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于手机照片放入img 标签中被旋转问题">
 <meta name="twitter:description" content="工作中遇到的问题  在昨天工作中,突然来了个需求,让我把APP里面拍摄的照片全部正确显示(有的是正的,有的是如同被旋转过的一样),要是全都是被旋转的解决方法很简单,用css3的旋转就好了,可问题就是他有的是倒的,有的是正的,用常规方法就没法判断哪些是正的,哪些是倒的了。之后就百度发现了照片的EXIF信息,放在img标签中解析的(你如果直接用浏览器打开图片是可以解析的)。 图片的EXIF信息  关于">
@@ -34,6 +36,17 @@
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
   </style>
   
 
@@ -43,11 +56,12 @@
 </html>
 
 <body>
+  <div style="background: url(/img/241ac0d9776b0b35a16add96800635c8.jpg);width: 100%;height: 100%;position: absolute;top: 0px;left: 0px"></div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" style="background: rgba(255, 255, 255, 0.5)">
       
-<div class="overlay" style="background: #4d4d4d">
+<div class="overlay" style="background: rgba(77,77,77,0.5)">
 </div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -63,8 +77,6 @@
 			<ul>
 			
 		<li><a href="/">主页</a></li>
-		
-		<li><a href="/tags/随笔/">随笔</a></li>
 		
 			</ul>
 		</nav>
@@ -104,12 +116,12 @@
 			</div>
 		</nav>
 		<nav style="margin-top:89px;margin-left:-26px">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe>
+			<iframe frameborder="no" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe>
 		</nav>
 	</header>		
 </div>
     </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse" style="background-color: rgba(255, 255, 255, 0)">
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
@@ -126,8 +138,6 @@
 			</hgroup>
 			
 			
-			
-				
 			
 				
 			
@@ -153,9 +163,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,7 +179,7 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-关于手机照片放入img标签中被旋转问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-关于手机照片放入img标签中被旋转问题" class="article article-type-post " itemscope itemprop="blogPost" style="background: rgba(255, 255, 255,0.7)">
   <div class="article-inner">
     
       <header class="article-header">
@@ -253,11 +261,11 @@
 </html>
 
 <p>再参照下图:<br><img src="../../../../2019-7-24/imgEXIF.png" alt>,对比一下就可以得出结论了</p>
-<p><strong>用js取值方法</strong>:<br>首先安装Exif.js:<br><code>npm install exif-js --save</code>安装依赖<br>再在要使用的组件中引入:<br><code>import EXIF from &#39;exif-js&#39;</code><br>然后在使用下面的代码就可以得到图片的Orientation值</p>
+<p><strong>用js取值方法</strong>:<br>首先安装Exif.js:<br><code>npm install exif-js --save</code>安装依赖（有可能同时需要安装jquery依赖）<br>再在要使用的组件中引入:<br><code>import EXIF from &#39;exif-js&#39;</code><br>然后在使用下面的代码就可以得到图片的Orientation值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXIF.getData(document.getElementById(&apos;imgElement&apos;), function()&#123;//这行传入的第一个参数是图片的节点,第二个是回调函数</span><br><span class="line">EXIF.getTag(this, &apos;Orientation&apos;);//这行代码就是获取的图片的Orientation值</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>要注意的是,实际开发中的图片都是后台获取数据,所以在后台数据获取到之前,DOM节点是没有图片信息的,所以是无法生效的,所以得写在请求函数的回调函数内,并且是写在得到的数据赋值后,这样才能得到实际的img节点。</p>
-<p><strong>css属性解决问题</strong>:<br>css中有一个属性是:<br><code>image-orientation: from-image /* 使用图片的 EXIF 数据 */</code><br>不过这个属性的兼容性目前还是太差了,所以基本很少会用<br>只有高版本的火狐浏览器才支持,其他的高版本浏览器大部分不兼容</p>
+<p>要注意的是：<span style="color:red">实际开发中的图片都是后台获取数据,所以在后台数据获取到之前,DOM节点是没有图片信息的,所以是无法生效的,所以得写在请求函数的回调函数内,并且是写在得到的数据赋值后,这样才能得到实际的img节点。如果图片是外链的形式引入的，则还需要进行判断图片是否加载完成，<code>imgElement(图片节点).onload = function(){在这里进行取图片的EXIF信息}</code>因为在图片未加载完时，EXIF.js是读取不到图片的EXIF信息的</span></p>
+<p><strong>css属性解决问题</strong>:<br>css中有一个属性是:<br><code>image-orientation: from-image /* 使用图片的 EXIF 数据 */</code><br>不过这个属性的兼容性目前还是太差了,所以基本很少会用<br>目前只有高版本的火狐浏览器才支持,其他的高版本浏览器大部分不兼容</p>
 
       
 
@@ -394,6 +402,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#工作中遇到的问题"><span class="toc-number">1.</span> <span class="toc-text">工作中遇到的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片的EXIF信息"><span class="toc-number">2.</span> <span class="toc-text">图片的EXIF信息</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -444,15 +465,17 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
+    	<div class="footer-left" style="color: skyblue">
     		&copy; 2019 郭世都
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
+      </div>
+      <!-- <div class="footer-right">       
+          <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    </div> -->
   </div>
 </footer>
+
+
     </div>
     <script>
 	var yiliaConfig = {
