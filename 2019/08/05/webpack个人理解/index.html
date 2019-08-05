@@ -8,15 +8,20 @@
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 郭世都的个人博客</title>
+  <title>webpack个人理解 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="郭世都的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="概念在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。 入口(entry)入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构">
+<meta name="keywords" content="个人理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack个人理解">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/webpack个人理解/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
+<meta property="og:description" content="概念在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。 入口(entry)入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-05T03:35:07.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭世都的个人博客">
+<meta name="twitter:title" content="webpack个人理解">
+<meta name="twitter:description" content="概念在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。 入口(entry)入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -172,36 +177,118 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-webpack个人理解" class="article article-type-post " itemscope itemprop="blogPost" style="background: rgba(255, 255, 255,0.7)">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/webpack个人理解/" class="archive-article-date">
-  	<time datetime="2019-08-05T00:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/webpack个人理解/">webpack个人理解</a>
+    <h1 class="article-title" itemprop="name">
+      webpack个人理解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/05/webpack个人理解/" class="archive-article-date">
+  	<time datetime="2019-08-05T00:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。</p>
+<h3 id="入口-entry"><a href="#入口-entry" class="headerlink" title="入口(entry)"></a>入口(entry)</h3><p>入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构建内部依赖图。再进入入口后，webpack会找出那些与入口存在依赖（直接或间接）关系的模块和库。之后每个依赖变会被进行处理，最后输出到<a id="more"></a>bundles的文件中。<br>入口可以通过在webpack.config.js中进行配置（默认为<code>./src</code>),这个src就是我们一般在Vue-cli操作的那个文件夹。<br>入口可以是一个也可以是多个（就如同一个房子可以有一个门，也可以有多个门一样）：<br>一个直接配置:<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &apos;./path/to/my/entry/file.js&apos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>多个则用对象的方式来配置。如：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123; // pagesDir是准备好的入口文件集合目录的路径 ------  ./src</span><br><span class="line">    &apos;index/login&apos;: path.resolve(pagesDir, `./index/login/page`), </span><br><span class="line">    &apos;index/index&apos;: path.resolve(pagesDir, `./index/index/page`),</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="出口-output"><a href="#出口-output" class="headerlink" title="出口(output)"></a>出口(output)</h3><p>出口（output属性）告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件。默认为<code>./dist</code>（默认在此路径下输出）。整个应用程序结构，基本都会编译到指定的输出路径的文件夹中。出口（output属性）可以在webpack.js中指定一个<code>output</code>字段来进行配置。如：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);//Node.js中的核心功能模块，用于操作文件路径</span><br><span class="line">module.exports = &#123;</span><br><span class="line">entry: &apos;./path/to/my/entry/file.js&apos;,//入口配置</span><br><span class="line">output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &apos;dist&apos;),//bundle生成的地方</span><br><span class="line">    filename: &apos;my-first-webpack.bundle.js&apos;//webpack bundle 的名称</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const path = require(&apos;path&apos;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><p>webpack本身是只理解JavaScript的。无法处理其他文件，而loader则可以将所有类型的文件转换为webpack能够处理的有效模块。这样就能用webpack的打包能力，对他们进行处理。<br>官方文档：本质上，webpack loader 将所有类型的文件，转换为应用程序的依赖图（和最终的 bundle）可以直接引用的模块。<br>在webpack的配置中loader有两个属性：<br><code>test</code> 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。<br><code>use</code> 属性，表示进行转换时，应该使用哪个 loader。<br>如在webpack.config.js文件中<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);//Node.js中的核心功能模块，用于操作文件路径</span><br><span class="line">const config = &#123;</span><br><span class="line">output: &#123;//出口配置</span><br><span class="line">    filename: &apos;my-first-webpack.bundle.js&apos;</span><br><span class="line">&#125;,</span><br><span class="line">module: &#123;</span><br><span class="line">    rules: [//loader配置</span><br><span class="line">        &#123; test: /\.txt$/, use: &apos;raw-loader&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">module.exports = config;</span><br></pre></td></tr></table></figure></p>
+<p>这样在webpack的编译器读到在<code>require()或import</code>语句中解析为’.txt’的路径（txt文件）时，在对他打包之前，先使用<code>raw-loader</code>转换一下。<br>loader有很多种，分别对应不同的文件类型(TypeScript、CSS等)，在使用loader进行转换之前需要先安装对应的loader。如：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader</span><br><span class="line">npm install --save-dev ts-loader</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以让webpack对每个<code>.css</code>文件使用<code>css-loader</code>,以及对所有<code>.ts</code>文件使用<code>ts-loader</code>,配置如下：<br>在webpack.config.js文件中：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);//Node.js中的核心功能模块，用于操作文件路径</span><br><span class="line">const config = &#123;</span><br><span class="line">output: &#123;//出口配置</span><br><span class="line">    filename: &apos;my-first-webpack.bundle.js&apos;</span><br><span class="line">&#125;,</span><br><span class="line">module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">    &#123; test: /\.css$/, use: &apos;css-loader&apos; &#125;,</span><br><span class="line">    &#123; test: /\.ts$/, use: &apos;ts-loader&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">module.exports = config;</span><br></pre></td></tr></table></figure></p>
+<p>还可以在cli（命令行界面）使用loader(推荐在配置文件webpack.config.js的<code>module.rules</code>中写配置，方便管理，简化代码)，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --module-bind jade-loader --module-bind &apos;css=style-loader!css-loader&apos;</span><br></pre></td></tr></table></figure>
+
+<p>这会对 .jade 文件使用 jade-loader，对 .css 文件使用 style-loader 和 css-loader。</p>
+<p>还可以用内联方式来写(推荐在配置文件webpack.config.js的<code>module.rules</code>中写配置，方便管理，简化代码)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Styles from &apos;style-loader!css-loader?modules!./styles.css&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>可以在 import 语句或任何等效于 “import” 的方式中指定 loader。使用 ! 将资源中的 loader 分开。分开的每个部分都相对于当前目录解析。<br>选项可以传递查询参数，例如 ?key=value&amp;foo=bar，或者一个 JSON 对象，例如 ?{“key”:”value”,”foo”:”bar”}。</p>
+<h3 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h3><p>插件的功能极其强大与丰富，可以用来处理很多任务。<br>在使用一个插件时，要先用<code>require()</code>它并且把它存入一个常量（用<code>const</code>代替<code>var</code>或<code>let</code>创建的）中，然后把常量添加到<code>plugins</code>数组中，大多数插件可以通过选项(option)自定义。也可以在一个配置文件中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。<br>案例：安装<code>html-webpack-plugin</code>插件,此插件的基本作用就是生成Html文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin --save-dev</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;); // 通过 npm 安装的插件</span><br><span class="line">const webpack = require(&apos;webpack&apos;); // 用于访问内置插件</span><br><span class="line"></span><br><span class="line">const config = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.txt$/, use: &apos;raw-loader&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &apos;./src/index.html&apos;,//制定生成Html的模板</span><br><span class="line">        title: &quot;hello world&quot;//标题</span><br><span class="line">        &#125;)//new 的HtmlWebpackPlugin实例并在其中传入参数(是一个对象)，可传入的参数还有很多具体可看https://www.cnblogs.com/wonyun/p/6030090.html</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">module.exports = config;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><p>在配置文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    mode: &apos;production&apos;//默认值，生产模式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<html>
+    <table>
+        <tr>
+            <td>值</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>production</td>
+            <td>默认值，生产模式。会将 process.env.NODE_ENV 的值设为 production。启用 FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPlugin 和 UglifyJsPlugin.
+</td>
+        </tr>
+        <tr>
+            <td>development</td>
+            <td>开发模式。会将 process.env.NODE_ENV 的值设为 development。启用 NamedChunksPlugin 和 NamedModulesPlugin。</td>
+        </tr>
+        <tr>
+            <td>none</td>
+            <td>不使用优化</td>
+        </tr>
+    </table>
+</html>
+
+<p><strong><em>在production生产模式中会自动进行如下配置</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    // mode: &apos;production&apos;, 相当于配置了以下内容</span><br><span class="line">    performance: &#123;</span><br><span class="line">        hints: &apos;warning&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        pathinfo: false</span><br><span class="line">    &#125;,</span><br><span class="line">    optimization: &#123;</span><br><span class="line">        namedModules: false,</span><br><span class="line">        namedChunks: false,</span><br><span class="line">        nodeEnv: &apos;production&apos;,</span><br><span class="line">        flagIncludedChunks: true,</span><br><span class="line">        occurrenceOrder: true,</span><br><span class="line">        sideEffects: true,</span><br><span class="line">        usedExports: true,</span><br><span class="line">        concatenateModules: true,</span><br><span class="line">        splitChunks: &#123;</span><br><span class="line">        hidePathInfo: true,</span><br><span class="line">        minSize: 30000,</span><br><span class="line">        maxAsyncRequests: 5,</span><br><span class="line">        maxInitialRequests: 3,</span><br><span class="line">        &#125;,</span><br><span class="line">        noEmitOnErrors: true,</span><br><span class="line">        checkWasmTypes: true,</span><br><span class="line">        minimize: true,</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new UglifyJsPlugin(/* ... */),</span><br><span class="line">        new webpack.DefinePlugin(&#123; &quot;process.env.NODE_ENV&quot;: JSON.stringify(&quot;production&quot;) &#125;),</span><br><span class="line">        new webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">        new webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>在development开发模式中会自动进行如下配置：</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    // mode: &apos;development&apos; 相当于配置了以下内容</span><br><span class="line">    devtool: &apos;eval&apos;,</span><br><span class="line">    cache: true,</span><br><span class="line">    performance: &#123;</span><br><span class="line">        hints: false</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        pathinfo: true</span><br><span class="line">    &#125;,</span><br><span class="line">    optimization: &#123;</span><br><span class="line">        namedModules: true,</span><br><span class="line">        namedChunks: true,</span><br><span class="line">        nodeEnv: &apos;development&apos;,</span><br><span class="line">        flagIncludedChunks: false,</span><br><span class="line">        occurrenceOrder: false,</span><br><span class="line">        sideEffects: false,</span><br><span class="line">        usedExports: false,</span><br><span class="line">        concatenateModules: false,</span><br><span class="line">        splitChunks: &#123;</span><br><span class="line">        hidePathInfo: false,</span><br><span class="line">        minSize: 10000,</span><br><span class="line">        maxAsyncRequests: Infinity,</span><br><span class="line">        maxInitialRequests: Infinity,</span><br><span class="line">        &#125;,</span><br><span class="line">        noEmitOnErrors: false,</span><br><span class="line">        checkWasmTypes: false,</span><br><span class="line">        minimize: false,</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new webpack.NamedModulesPlugin(),</span><br><span class="line">        new webpack.NamedChunksPlugin(),</span><br><span class="line">        new webpack.DefinePlugin(&#123; &quot;process.env.NODE_ENV&quot;: JSON.stringify(&quot;development&quot;) &#125;),</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>none 不适用优化时</em></strong></p>
+<p>module.exports = {<br>    // mode: ‘none’, 相当于配置了以下内容<br>    performance: {<br>        hints: false<br>    },<br>    optimization: {<br>        flagIncludedChunks: false,<br>        occurrenceOrder: false,<br>        sideEffects: false,<br>        usedExports: false,<br>        concatenateModules: false,<br>        splitChunks: {<br>        hidePathInfo: false,<br>        minSize: 10000,<br>        maxAsyncRequests: Infinity,<br>        maxInitialRequests: Infinity,<br>        },<br>        noEmitOnErrors: false,<br>        checkWasmTypes: false,<br>        minimize: false,<br>    },<br>    plugins: []<br>}</p>
+<pre><code></code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你为我点赞<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdzfbsk.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdwxsk.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,172 +300,148 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/05/webpack个人理解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/24/关于手机照片放入img标签中被旋转问题/" class="archive-article-date">
-  	<time datetime="2019-07-24T00:26:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/24/关于手机照片放入img标签中被旋转问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于手机照片放入img 标签中被旋转问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/24/关于手机照片放入img标签中被旋转问题/">关于手机照片放入img 标签中被旋转问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常工作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#入口-entry"><span class="toc-number">2.</span> <span class="toc-text">入口(entry)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出口-output"><span class="toc-number">3.</span> <span class="toc-text">出口(output)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loader"><span class="toc-number">4.</span> <span class="toc-text">loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件-plugins"><span class="toc-number">5.</span> <span class="toc-text">插件(plugins)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式"><span class="toc-number">6.</span> <span class="toc-text">模式</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/22/Hexo-功能添加/" class="archive-article-date">
-  	<time datetime="2019-07-22T08:00:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/Hexo-功能添加/">Hexo 功能添加</a>
-    </h1>
+  
+	<section id="comments" class="comments">
+	  <style>
+		.comments{margin:30px;padding:10px;background:#fff}
+		@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "vaTKGl67sWK5flIUtXlsLV0e-gzGzoHsz",
+            app_key: "ExFvpgYgY94JIofPnjAXzJMQ",
+            placeholder: "快来评论吧!",
+            avatar:"wavatar"
+        });
+    }
+</script>
+	 </section>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/22/vue-事件总线初接触/" class="archive-article-date">
-  	<time datetime="2019-07-22T00:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/vue-事件总线初接触/">vue--事件总线初接触</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/20/Hexo个人安装总结/" class="archive-article-date">
-  	<time datetime="2019-07-20T10:21:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/20/Hexo个人安装总结/">Hexo个人安装总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
 
+  
+
+  
 
           </div>
         </div>
@@ -402,8 +465,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
