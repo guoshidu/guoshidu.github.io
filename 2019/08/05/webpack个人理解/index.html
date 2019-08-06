@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="郭世都的个人博客">
 <meta property="og:description" content="概念在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。 入口(entry)入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T04:04:40.085Z">
+<meta property="og:updated_time" content="2019-08-06T02:10:37.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack个人理解">
 <meta name="twitter:description" content="概念在官方文档上是这么说的：“本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)”。我理解为webpack就是将一套包含很多类型文件（如js、hbs、cjs、sass、png等）的程序，打包成js、css、jpg、png等。 入口(entry)入口，顾名思义：是从哪个或者说哪些地方进入。在webpack中是指定从哪个模块作为起点开始构">
@@ -256,7 +256,15 @@
 <p>2.production打包后，代码会进行压缩，比development的文件小。</p>
 <p><strong>常用方式–config</strong><br>一般开发项目时，会自定义配置文件，例如：webpack.base.config.js（公共配置）、webpack.dev.cinfig.js（开发配置）、webpack.prod.config.js（生产配置）。</p>
 <p>并分别在开发配置和生产配置中指定mode，在运行webpack时用–config命令指定使用的配置文件。来代替直接指定模式–mode。</p>
-<p><code>build: &#39;webpack --config build/webpack.dev.config.js&#39;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">build: &apos;webpack --config build/webpack.dev.config.js&apos;</span><br></pre></td></tr></table></figure>
+
+<h3 id="webpack热替换"><a href="#webpack热替换" class="headerlink" title="webpack热替换"></a>webpack热替换</h3><p>webpack目前不支持在生产环境中使用，所以作用是加快开发速度。<br>启用方法：因为是个插件，所以跟之前说的插件使用方法一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new webpack.HotModuleReplacementPlugin(&#123;</span><br><span class="line">  // Options...//参数一般是不用传，具体可传参数也是实验性，随时可能被放弃，所以不多说,如下：</span><br><span class="line">  // multiStep (boolean)：设置为 true 时，插件会分成两步构建文件。首先编译热加载 chunks，之后再编译剩余的通常的资源。</span><br><span class="line">  // fullBuildTimeout (number)：当 multiStep 启用时，表示两步构建之间的延时。</span><br><span class="line">  // requestTimeout (number)：下载 manifest 的延时（webpack 3.0.0 后的版本支持）。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>如果已经启用了模块热替换，则它的接口则将被暴露在<code>module.hot</code>属性下，用法例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (module.hot) &#123;//首先判断接口是否可用</span><br><span class="line">  module.hot.accept(&apos;./library.js&apos;, function() &#123;//module.hot属性下的accept方法，第一个参数的数据类型可以是字符串或者字符串数组，第二个是回调函数，可以使用更新过后的模块进行某些操作</span><br><span class="line">    // 使用更新过的 library 模块执行某些操作...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他方法类似，具体使用方法可看官方文档<a href="https://www.webpackjs.com/api/hot-module-replacement/" target="_blank" rel="noopener">https://www.webpackjs.com/api/hot-module-replacement/</a></p>
 
       
 
@@ -400,7 +408,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#入口-entry"><span class="toc-number">2.</span> <span class="toc-text">入口(entry)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出口-output"><span class="toc-number">3.</span> <span class="toc-text">出口(output)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loader"><span class="toc-number">4.</span> <span class="toc-text">loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件-plugins"><span class="toc-number">5.</span> <span class="toc-text">插件(plugins)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式"><span class="toc-number">6.</span> <span class="toc-text">模式</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#入口-entry"><span class="toc-number">2.</span> <span class="toc-text">入口(entry)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出口-output"><span class="toc-number">3.</span> <span class="toc-text">出口(output)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loader"><span class="toc-number">4.</span> <span class="toc-text">loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件-plugins"><span class="toc-number">5.</span> <span class="toc-text">插件(plugins)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式"><span class="toc-number">6.</span> <span class="toc-text">模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack热替换"><span class="toc-number">7.</span> <span class="toc-text">webpack热替换</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -546,11 +554,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日常工作</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">日常工作</a>
               </li>
              
               <li class="article-tag-list-item">
