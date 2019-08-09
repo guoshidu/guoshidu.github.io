@@ -8,15 +8,20 @@
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/8 | 郭世都的个人博客</title>
+  <title>axios 相关配置及注解 | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="郭世都的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+  <meta name="description" content="axios 介绍axios 功能很强大，这里完成的只是鳞毛凤角 axios 是基于 promise 可用于 http 客户端和 Node.js +支持浏览器和 Node.js +支持 promise API +能拦截请求和响应 +能转换请求和响应数据 +能取消请求 +能自动转换 JSON 数据 +浏览器端支持放置 CSRF(跨站请求伪造)">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="axios 相关配置及注解">
+<meta property="og:url" content="http://yoursite.com/2019/08/09/axios-相关配置及注解/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
+<meta property="og:description" content="axios 介绍axios 功能很强大，这里完成的只是鳞毛凤角 axios 是基于 promise 可用于 http 客户端和 Node.js +支持浏览器和 Node.js +支持 promise API +能拦截请求和响应 +能转换请求和响应数据 +能取消请求 +能自动转换 JSON 数据 +浏览器端支持放置 CSRF(跨站请求伪造)">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-09T03:59:21.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭世都的个人博客">
+<meta name="twitter:title" content="axios 相关配置及注解">
+<meta name="twitter:description" content="axios 介绍axios 功能很强大，这里完成的只是鳞毛凤角 axios 是基于 promise 可用于 http 客户端和 Node.js +支持浏览器和 Node.js +支持 promise API +能拦截请求和响应 +能转换请求和响应数据 +能取消请求 +能自动转换 JSON 数据 +浏览器端支持放置 CSRF(跨站请求伪造)">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -172,36 +177,81 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-axios-相关配置及注解" class="article article-type-post " itemscope itemprop="blogPost" style="background: rgba(255, 255, 255,0.7)">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      axios 相关配置及注解
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/09/axios-相关配置及注解/" class="archive-article-date">
+
+        
+        <a href="/2019/08/09/axios-相关配置及注解/" class="archive-article-date">
   	<time datetime="2019-08-09T03:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/09/axios-相关配置及注解/">axios 相关配置及注解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="axios-介绍"><a href="#axios-介绍" class="headerlink" title="axios 介绍"></a>axios 介绍</h3><p>axios 功能很强大，这里完成的只是鳞毛凤角</p>
+<p>axios 是基于 promise 可用于 http 客户端和 Node.js</p>
+<p>+支持浏览器和 Node.js</p>
+<p>+支持 promise API</p>
+<p>+能拦截请求和响应</p>
+<p>+能转换请求和响应数据</p>
+<p>+能取消请求</p>
+<p>+能自动转换 JSON 数据</p>
+<p>+浏览器端支持放置 CSRF(跨站请求伪造)<a id="more"></a></p>
+<h3 id="相关配置及注解"><a href="#相关配置及注解" class="headerlink" title="相关配置及注解"></a>相关配置及注解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line">import axios from &quot;axios&quot;; //引入axios插件</span><br><span class="line"></span><br><span class="line">import Qs from &quot;qs&quot;; //引入qs插件</span><br><span class="line">import &#123;</span><br><span class="line">  // Loading,</span><br><span class="line">  Message</span><br><span class="line">&#125; from &quot;element-ui&quot;; //引入element-ui里的Message方法（便于提示消息）</span><br><span class="line">import router from &quot;../router/index&quot;; //引入路由</span><br><span class="line">import &#123; removeCookie, getCookie &#125; from &quot;./cookie&quot;; //引入js-cookie插件的两个方法删除cookie与读取cookie</span><br><span class="line"></span><br><span class="line">axios.defaults.withCredentials = true; //跨域请求</span><br><span class="line"></span><br><span class="line">// XMLHttpRequest.withCredentials</span><br><span class="line">export default function(path, parmas, method = &quot;GET&quot;, headerType = &quot;json&quot;) &#123;</span><br><span class="line">  //配置axios,参数分别为(请求接口 ,请求参数,请求方式（默认为GET方式,可传&apos;post&apos;等） ,from表单提交（默认为json,可传&apos;from&apos;。。）)</span><br><span class="line"></span><br><span class="line">  let baseURL = &quot;&quot;;</span><br><span class="line">  let headers = &#123;&#125;;</span><br><span class="line">  let data = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  if (process.env.NODE_ENV == &quot;development&quot;) &#123;</span><br><span class="line">    //判断config文件夹下的dev.env.js文件中的NODE_ENV的值是否为development，//为development(或简写为dev)则为开发环境，为production(或简写为prod)则为生产环境</span><br><span class="line">    //注：nodejs原生对象process的env属性是个对象，这个对象中就包含NODE_ENV属性</span><br><span class="line">    baseURL = &quot;/&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  //  设置请求头</span><br><span class="line">  if (method == &quot;post&quot;) &#123;</span><br><span class="line">    //请求方式是post</span><br><span class="line">    if (headerType == &quot;json&quot;) &#123;</span><br><span class="line">      //是post请求方式的情况下判断是用json格式</span><br><span class="line">      headers = &#123;</span><br><span class="line">        //设置请求头</span><br><span class="line">        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;, //值为XMLHttpRequest是Ajax请求，如果这里的值为null则为同步请求</span><br><span class="line">        Authorization: &quot;Bearer &quot; + getCookie(&quot;accessToken&quot;), //这里权限认证，传入Token</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/json;charset=UTF-8&quot; //设置传入参数的格式的声明，这里声明为json格式</span><br><span class="line">        // &apos;Cache-Control&apos;: &apos;no-cache&apos;</span><br><span class="line">      &#125;;</span><br><span class="line">      data = parmas; //data获取到要传的参数</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      headers = &#123;</span><br><span class="line">        //是post请求方式的情况下判断不是用json格式(这里判断非json则是form格式)</span><br><span class="line">        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;, //值为XMLHttpRequest是Ajax请求，如果这里的值为null则为同步请求</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded;charset=UTF-8&quot; //设置传入参数的格式的声明，这里声明为form格式</span><br><span class="line">        // &apos;Cache-Control&apos;: &apos;no-cache&apos;</span><br><span class="line">      &#125;;</span><br><span class="line">      data = Qs.stringify(parmas); //为form格式，则需要将参数序列化，使用Qs.stringify()方法，这个方法引用自qs插件</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    //请求方式为非post方式</span><br><span class="line">    if (headerType !== &quot;json&quot;) &#123;</span><br><span class="line">      //非post方式且非json格式</span><br><span class="line">      headers = &#123;</span><br><span class="line">        //设置请求头</span><br><span class="line">        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot;, //值为XMLHttpRequest是Ajax请求，如果这里的值为null则为同步请求</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded;charset=UTF-8&quot; //设置传入参数的格式的声明，这里声明为form格式</span><br><span class="line">        // &apos;Cache-Control&apos;: &apos;no-cache&apos;</span><br><span class="line">      &#125;;</span><br><span class="line">      data = Qs.stringify(parmas); //因要拼接在请求路径后面，所以将参数序列化，使用Qs.stringify()方法，这个方法引用自qs插件</span><br><span class="line">      path = path + &quot;?&quot; + data; //请求参数拼接在请求路径后面，用?隔开。</span><br><span class="line">      data = &#123;&#125;; //清空data请求参数</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      //非post方式是json格式</span><br><span class="line">      headers = &#123;</span><br><span class="line">        //设置请求头</span><br><span class="line">        &quot;X-Requested-With&quot;: &quot;XMLHttpRequest&quot; //值为XMLHttpRequest是Ajax请求，如果这里的值为null则为同步请求</span><br><span class="line">        // &apos;Cache-Control&apos;: &apos;no-cache&apos; //禁止缓存</span><br><span class="line">      &#125;;</span><br><span class="line">      data = Qs.stringify(parmas); //因要拼接在请求路径后面，所以将参数序列化，使用Qs.stringify()方法，这个方法引用自qs插件</span><br><span class="line">      path = path + &quot;?&quot; + data; //请求参数拼接在请求路径后面，用?隔开。</span><br><span class="line">      data = &#123;&#125;; //清空data请求参数</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  //   请求拦截</span><br><span class="line">  axios.interceptors.request.use(</span><br><span class="line">    //接收两个函数作为参数，第一个在请求正常发送时做些什么，第二个是对请求错误对象做些什么</span><br><span class="line">    //请求前执行</span><br><span class="line">    config =&gt; &#123;</span><br><span class="line">      return config;</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">      return Promise.reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">  //  响应拦截</span><br><span class="line">  axios.interceptors.response.use(</span><br><span class="line">    //请求后执行</span><br><span class="line">    response =&gt; &#123;</span><br><span class="line">      //请求后状态码为401时，弹出错误提示&quot;登录过期，请重新登录&quot;(这里用的Message.error方法是之前引入的element-ui里的)，并删除储存的用户数据Token等，并控制路由将页面跳转到登录页，如果请求错误，则将错误对象转化为Promise对象</span><br><span class="line">      if (response.status == &quot;401&quot;) &#123;</span><br><span class="line">        Message.error(&#123;</span><br><span class="line">          message: &quot;登录过期，请重新登录&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">        removeCookie(&quot;accessToken&quot;);</span><br><span class="line">        removeCookie(&quot;accessName&quot;);</span><br><span class="line">        router.push(&#123;</span><br><span class="line">          path: &quot;/login&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      return response;</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">      return Promise.resolve(error.response);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  //  开始请求</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    //配置完成，进行请求，axios内的参数都由上面配置进行处理，最后将处理的结果放入，其中timeout为如果请求超过了4000ms则中断请求</span><br><span class="line">    axios(&#123;</span><br><span class="line">      baseURL,</span><br><span class="line">      url: path,</span><br><span class="line">      method: method,</span><br><span class="line">      data: data,</span><br><span class="line">      timeout: 4000,</span><br><span class="line">      headers: headers</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(result =&gt; &#123;</span><br><span class="line">        //请求回调</span><br><span class="line">        if (result !== undefined) &#123;</span><br><span class="line">          resolve(result.data);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(err =&gt; &#123;</span><br><span class="line">        //请求错误</span><br><span class="line">        console.log(err);</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>这里就完成了相关的配置。使用时则如：<br>可在 main.js 中将 axios 绑在 Vue 原型上<br>先引入 axios 这个方法，用<code>import axios from &quot;axios配置路径&quot;</code><br><code>Vue.prototype.$axios = axios //这里的$axios可自定义名字</code><br>使用时可直接使用，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$axios(path, parmas, method = &quot;GET&quot;, headerType = &quot;json&quot;).then(res=&gt;&#123;</span><br><span class="line">console.log(res)//res 为后台传入的数据</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>参数分别为(请求接口 ,请求参数,请求方式（默认为 GET 方式,可传’post’等） ,from 表单提交（默认为 json,可传’from’。。）),这里同上面的配置</p>
+<p>也可在哪里调用在哪里引入，就不多说了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你为我点赞<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdzfbsk.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdwxsk.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,134 +263,148 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/09/axios-相关配置及注解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/09/关于qs插件/" class="archive-article-date">
-  	<time datetime="2019-08-09T00:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/09/关于qs插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于qs插件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/09/关于qs插件/">关于qs插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#axios-介绍"><span class="toc-number">1.</span> <span class="toc-text">axios 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关配置及注解"><span class="toc-number">2.</span> <span class="toc-text">相关配置及注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/07/关于数组循环（含ES6）/" class="archive-article-date">
-  	<time datetime="2019-08-07T00:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/07/关于数组循环（含ES6）/">关于数组循环(含ES6)</a>
-    </h1>
+  
+	<section id="comments" class="comments">
+	  <style>
+		.comments{margin:30px;padding:10px;background:#fff}
+		@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "vaTKGl67sWK5flIUtXlsLV0e-gzGzoHsz",
+            app_key: "ExFvpgYgY94JIofPnjAXzJMQ",
+            placeholder: "快来评论吧!",
+            avatar:"wavatar"
+        });
+    }
+</script>
+	 </section>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/webpack个人理解/" class="archive-article-date">
-  	<time datetime="2019-08-05T00:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/webpack个人理解/">webpack个人理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人理解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
 
+  
+
+  
 
           </div>
         </div>
@@ -364,8 +428,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
