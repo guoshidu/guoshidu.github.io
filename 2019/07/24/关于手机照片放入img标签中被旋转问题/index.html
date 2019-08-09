@@ -262,7 +262,7 @@
 
 <p>再参照下图:<br><img src="../../../../2019-7-24/imgEXIF.png" alt>,对比一下就可以得出结论了</p>
 <p><strong>用js取值方法</strong>:<br>首先安装Exif.js:<br><code>npm install exif-js --save</code>安装依赖（有可能同时需要安装jquery依赖）<br>再在要使用的组件中引入:<br><code>import EXIF from &#39;exif-js&#39;</code><br>然后在使用下面的代码就可以得到图片的Orientation值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXIF.getData(document.getElementById(&apos;imgElement&apos;), function()&#123;//这行传入的第一个参数是图片的节点,第二个是回调函数</span><br><span class="line">EXIF.getTag(this, &apos;Orientation&apos;);//这行代码就是获取的图片的Orientation值</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXIF.getData(<span class="built_in">document</span>.getElementById(<span class="string">'imgElement'</span>), <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//这行传入的第一个参数是图片的节点,第二个是回调函数</span></span><br><span class="line">EXIF.getTag(<span class="keyword">this</span>, <span class="string">'Orientation'</span>);<span class="comment">//这行代码就是获取的图片的Orientation值</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>要注意的是：<span style="color:red">实际开发中的图片都是后台获取数据,所以在后台数据获取到之前,DOM节点是没有图片信息的,所以是无法生效的,所以得写在请求函数的回调函数内,并且是写在得到的数据赋值后,这样才能得到实际的img节点。如果图片是外链的形式引入的，则还需要进行判断图片是否加载完成，<code>imgElement(图片节点).onload = function(){在这里进行取图片的EXIF信息}</code>因为在图片未加载完时，EXIF.js是读取不到图片的EXIF信息的</span></p>
 <p><strong>css属性解决问题</strong>:<br>css中有一个属性是:<br><code>image-orientation: from-image /* 使用图片的 EXIF 数据 */</code><br>不过这个属性的兼容性目前还是太差了,所以基本很少会用<br>目前只有高版本的火狐浏览器才支持,其他的高版本浏览器大部分不兼容</p>
@@ -560,11 +560,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装总结</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,10 +577,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">个人理解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
             <div class="clearfix"></div>
