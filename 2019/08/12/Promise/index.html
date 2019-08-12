@@ -8,15 +8,20 @@
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
   <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 郭世都的个人博客</title>
+  <title>Promise | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="郭世都的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法 1234new Promise(function(resolve,reject)&amp;#123;    //resolve 成功时调用    //reject 失败时调用&amp;#125">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/Promise/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
+<meta property="og:description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法 1234new Promise(function(resolve,reject)&amp;#123;    //resolve 成功时调用    //reject 失败时调用&amp;#125">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-12T02:48:58.475Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭世都的个人博客">
+<meta name="twitter:title" content="Promise">
+<meta name="twitter:description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法 1234new Promise(function(resolve,reject)&amp;#123;    //resolve 成功时调用    //reject 失败时调用&amp;#125">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -172,36 +177,78 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Promise" class="article article-type-post " itemscope itemprop="blogPost" style="background: rgba(255, 255, 255,0.7)">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Promise
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/12/Promise/" class="archive-article-date">
+
+        
+        <a href="/2019/08/12/Promise/" class="archive-article-date">
   	<time datetime="2019-08-12T01:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/12/Promise/">Promise</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###用途介绍<br>解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。</p>
+<h3 id="语法使用"><a href="#语法使用" class="headerlink" title="语法使用"></a>语法使用</h3><p><strong>基本语法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//resolve 成功时调用</span></span><br><span class="line">    <span class="comment">//reject 失败时调用</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p><strong>示例 1：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line"><span class="keyword">if</span>(a==<span class="number">10</span>)&#123;</span><br><span class="line">    resolve(<span class="string">'成功'</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    reject(<span class="string">'失败'</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// promise.then(res=&gt;&#123;//成功时调用并返回"成功"</span></span><br><span class="line"><span class="comment">//   console.log(res);</span></span><br><span class="line"><span class="comment">// &#125;,err=&gt;&#123;//失败时调用并返回"失败"</span></span><br><span class="line"><span class="comment">//   console.log(err);</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"><span class="comment">//另一种写法：</span></span><br><span class="line">promise.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="comment">//成功时调用并返回"成功"</span></span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(err);<span class="comment">//失败时调用并返回"失败"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="built_in">Promise</span>.resolve(<span class="string">'aa'</span>);<span class="comment">//将现有的东西转换为Promise对象，并且为成功的时候</span></span><br><span class="line"><span class="comment">//等价于:</span></span><br><span class="line">    <span class="comment">// p1.then(res=&gt;&#123;</span></span><br><span class="line">    <span class="comment">//   console.log(res);//aa</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="built_in">Promise</span>.reject(<span class="string">'bb'</span>);<span class="comment">//将现有的东西转换为Promise对象，并且为失败的时候</span></span><br><span class="line"><span class="comment">//等价于:</span></span><br><span class="line">    <span class="comment">// p2.then(res=&gt;&#123;</span></span><br><span class="line">    <span class="comment">//   console.log(res);//不执行，因为是失败状态</span></span><br><span class="line">    <span class="comment">// &#125;,err=&gt;&#123;</span></span><br><span class="line">    <span class="comment">//   console.log(err);//bb</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Promise.all</strong><br><code>Promise.all</code>,一般用于同时发起多个请求，并将所有请求获得的数据放在一个数组中，注，需确保所有请求都是成功状态，否则会没有数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p3 = <span class="built_in">Promise</span>.resolve(<span class="string">'aaaa'</span>)</span><br><span class="line"><span class="keyword">let</span> p4 = <span class="built_in">Promise</span>.resolve(<span class="string">'bbbb'</span>)</span><br><span class="line"><span class="keyword">let</span> p5 = <span class="built_in">Promise</span>.resolve(<span class="string">'cccc'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([p3,p4,p5]).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);<span class="comment">//["aaaa","bbbb","cccc"]</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>Promise.race()</code>,与 Promise.all()用法差不多只要有一个成功就返回，//用得少，用 Promise.all 较多</p>
+<h3 id="最终实际开发时模拟-登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同"><a href="#最终实际开发时模拟-登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同" class="headerlink" title="最终实际开发时模拟(登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同)"></a>最终实际开发时模拟(登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userid,userXX;<span class="comment">//声明变量储存用户ID与用户信息,在vue中一般存放在data里</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> userLogin = <span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;<span class="comment">//用户登录请求</span></span><br><span class="line">axios.post(<span class="string">"./package.json"</span>,&#123;<span class="comment">//通过路径发起请求</span></span><br><span class="line">    userName:<span class="string">"888"</span>,<span class="comment">//参数</span></span><br><span class="line">    userPassword:<span class="string">"123456"</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="comment">//成功回调</span></span><br><span class="line">    <span class="keyword">if</span>(res.code==<span class="string">"200"</span>)&#123;</span><br><span class="line">    resolve(res)<span class="comment">//成功时接收的数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;<span class="comment">//失败回调</span></span><br><span class="line">    reject(err)<span class="comment">//错误时的错误对象</span></span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> getUserInfo = <span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;<span class="comment">//用户登录请求</span></span><br><span class="line">axios.post(<span class="string">"./usetIn.json"</span>,&#123;<span class="comment">//通过路径发起请求</span></span><br><span class="line">    userId:userid,<span class="comment">//用前一个请求获取到的ID作为参数(在之前声明过的,在Vue里用this.userid)</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="comment">//成功回调</span></span><br><span class="line">    <span class="keyword">if</span>(res.code==<span class="string">"200"</span>)&#123;</span><br><span class="line">    resolve(res)<span class="comment">//成功时接收的数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;<span class="comment">//失败回调</span></span><br><span class="line">    reject(err)<span class="comment">//错误时的错误对象</span></span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(userLogin).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">ueseid = res.userId<span class="comment">//存放获取到的ID</span></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(getUserInfo)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">userXX = res.userxx<span class="comment">//存放用户信息</span></span><br><span class="line">&#125;)<span class="comment">//可无限延伸</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你为我点赞<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdzfbsk.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/gsdwxsk.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,362 +260,148 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/12/Promise/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/09/伪数组/" class="archive-article-date">
-  	<time datetime="2019-08-09T07:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/09/伪数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">伪数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/09/伪数组/">伪数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法使用"><span class="toc-number">1.</span> <span class="toc-text">语法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终实际开发时模拟-登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同"><span class="toc-number">2.</span> <span class="toc-text">最终实际开发时模拟(登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同)</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/09/axios-相关配置及注解/" class="archive-article-date">
-  	<time datetime="2019-08-09T03:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/09/axios-相关配置及注解/">axios 相关配置及注解</a>
-    </h1>
+  
+	<section id="comments" class="comments">
+	  <style>
+		.comments{margin:30px;padding:10px;background:#fff}
+		@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "vaTKGl67sWK5flIUtXlsLV0e-gzGzoHsz",
+            app_key: "ExFvpgYgY94JIofPnjAXzJMQ",
+            placeholder: "快来评论吧!",
+            avatar:"wavatar"
+        });
+    }
+</script>
+	 </section>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/09/qs插件/" class="archive-article-date">
-  	<time datetime="2019-08-09T00:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/09/qs插件/">qs插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/07/数组循环（含ES6）/" class="archive-article-date">
-  	<time datetime="2019-08-07T00:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/07/数组循环（含ES6）/">数组循环(含ES6)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/webpack个人理解/" class="archive-article-date">
-  	<time datetime="2019-08-05T00:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/webpack个人理解/">webpack个人理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人理解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/24/关于手机照片放入img标签中被旋转问题/" class="archive-article-date">
-  	<time datetime="2019-07-24T00:26:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/24/关于手机照片放入img标签中被旋转问题/">关于手机照片放入img 标签中被旋转问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常工作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/22/Hexo-功能添加/" class="archive-article-date">
-  	<time datetime="2019-07-22T08:00:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/Hexo-功能添加/">Hexo 功能添加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/22/vue-事件总线初接触/" class="archive-article-date">
-  	<time datetime="2019-07-22T00:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/vue-事件总线初接触/">vue--事件总线初接触</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/20/Hexo个人安装总结/" class="archive-article-date">
-  	<time datetime="2019-07-20T10:21:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/20/Hexo个人安装总结/">Hexo个人安装总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
 
+  
+
+  
 
           </div>
         </div>
@@ -592,8 +425,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
