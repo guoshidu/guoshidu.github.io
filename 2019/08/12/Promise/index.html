@@ -10,18 +10,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Promise | 郭世都的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
+  <meta name="description" content="用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise">
 <meta property="og:url" content="http://yoursite.com/2019/08/12/Promise/index.html">
 <meta property="og:site_name" content="郭世都的个人博客">
-<meta property="og:description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
+<meta property="og:description" content="用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-12T02:52:02.572Z">
+<meta property="og:updated_time" content="2019-08-13T06:38:31.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise">
-<meta name="twitter:description" content="###用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
+<meta name="twitter:description" content="用途介绍解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。 语法使用基本语法">
   
     <link rel="alternative" href="/atom.xml" title="郭世都的个人博客" type="application/atom+xml">
   
@@ -114,7 +114,10 @@
 			</div>
 		</nav>
 		<nav style="margin-top:89px;margin-left:-26px">
-			<iframe frameborder="no" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe>
+			<!-- 《いとしすぎて》--Tiara / KG -->
+			<!-- <iframe frameborder="no" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=22845944&auto=1&height=66"></iframe> -->
+			<!-- 《大丈夫》--wacci -->
+			<iframe frameborder="no" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=428203967&auto=1&height=66"></iframe>
 		</nav>
 	</header>		
 </div>
@@ -197,7 +200,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###用途介绍<br>解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。</p>
+        <h3 id="用途介绍"><a href="#用途介绍" class="headerlink" title="用途介绍"></a>用途介绍</h3><p>解决多重回调(用上一次请求回来的数据作为参数请求下一条数据,或者说需要有顺序的发送完成请求，并有顺序的获得数据，如此反复，也称回调地狱)代码繁杂问题，同时也不希望一个请求挂掉，后面的都挂掉。</p>
 <h3 id="语法使用"><a href="#语法使用" class="headerlink" title="语法使用"></a>语法使用</h3><p><strong>基本语法</strong><a id="more"></a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//resolve 成功时调用</span></span><br><span class="line">    <span class="comment">//reject 失败时调用</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -362,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法使用"><span class="toc-number">1.</span> <span class="toc-text">语法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终实际开发时模拟-登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同"><span class="toc-number">2.</span> <span class="toc-text">最终实际开发时模拟(登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#用途介绍"><span class="toc-number">1.</span> <span class="toc-text">用途介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法使用"><span class="toc-number">2.</span> <span class="toc-text">语法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终实际开发时模拟-登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同"><span class="toc-number">3.</span> <span class="toc-text">最终实际开发时模拟(登录请求，与通过登录信息请求获取用户信息。注：实际开发中流程可能不一样，但用法相同)</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -385,15 +388,15 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'true' == true ? true : false;
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
     window.onload = function() {
         new Valine({
             el: '.comment',
             notify: notify,
             verify: verify,
-            app_id: "vaTKGl67sWK5flIUtXlsLV0e-gzGzoHsz",
-            app_key: "ExFvpgYgY94JIofPnjAXzJMQ",
+            app_id: "tzeDU3A0qg72rjOLGLVNjxnO-MdYXbMMI",
+            app_key: "WiC1yz1z5AgcbTpwosYsypIG",
             placeholder: "快来评论吧!",
             avatar:"wavatar"
         });
